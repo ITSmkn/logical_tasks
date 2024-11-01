@@ -2,7 +2,7 @@ package task_1;
 
 
 public class Q1 {
-    public static int calculateParity(int[] bits, int pos){ int parity = 0; 
+    public static int calculateParity1(int[] bits, int pos){ int parity = 0; 
     for (int i = 0; i < bits.length; i++){ 
         if ((i + 1 & pos) != 0){ 
             parity ^= bits[i];
@@ -18,7 +18,7 @@ public class Q1 {
         
         int[] parityBits = {1, 2, 4, 8, 16}; int errorPosition = 0; 
         
-        for (int parity : parityBits) { int parityCheck = calculateParity(bits, parity); errorPosition += parityCheck * parity; } 
+        for (int parity : parityBits) { int parityCheck = calculateParity1(bits, parity); errorPosition += parityCheck * parity; } 
         if (errorPosition == 0){ 
             System.out.println("No error detected for code: " + code); 
         } 
